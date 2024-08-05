@@ -1,0 +1,95 @@
+server:
+  port: 8011
+
+spring:
+  codec:
+    max-in-memory-size: 10MB
+  application:
+    name: GANG ZI
+
+  mvc:
+    path-match:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vote
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 9
+
+  mail:
+    host: smtp.qq.com
+    username: az1060088260@qq.com
+    password: lbhynmigwitabahj
+    port: 465
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          starttls:
+            enable: true
+    default-encoding: UTF-8
+
+  servlet:
+    multipart:
+      # 限制上传单个文件的大小
+      max-file-size: 1024MB
+      # 单次请求的文件的总大小，-1表示不限制
+      max-request-size: -1
+
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+    hibernate:
+      ddl-auto: update
+      jdbc:
+        time_zone: UTC
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    timeout: 100000
+    lettuce:
+      pool:
+        max-active: 300
+        max-idle: 100
+        max-wait: -1
+        min-idle: 100
+
+springdoc:
+  paths-to-exclude: /swagger-resources/**, /v2/api-docs
+  swagger-ui:
+    operationsSorter: method
+    tagsSorter: alpha
+    docExpansion: none
+
+
+logging:
+  level:
+    org.springframework.security:
+      - debug
+      - info
+    org.springframework.web: error
+    org.hibernate.SQL: debug
+    org.hibernate.engine.QueryParameters: debug
+    org.hibernate.engine.query.HQLQueryPlan: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+telethonUrl: http://127.0.0.1:8000
+vote:
+  #banner
+  profile: /vote/base/banner/
+
+
+
