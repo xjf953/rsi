@@ -10,16 +10,16 @@ spring:
   mvc:
     path-match:
       matching-strategy: ant_path_matcher
-  datasource:
-    url: jdbc:postgresql://localhost:5432/vote
-    username: postgres
-    password: admin
-    driver-class-name: org.postgresql.Driver
-    hikari:
-      connection-timeout: 30000
-      idle-timeout: 600000
-      max-lifetime: 1800000
-      maximum-pool-size: 9
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/vote
+#    username: postgres
+#    password: admin
+#    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      connection-timeout: 30000
+#      idle-timeout: 600000
+#      max-lifetime: 1800000
+#      maximum-pool-size: 9
 
   mail:
     host: smtp.qq.com
@@ -44,28 +44,28 @@ spring:
       max-request-size: -1
 
 
-  jpa:
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: false
-    hibernate:
-      ddl-auto: update
-      jdbc:
-        time_zone: UTC
+#  jpa:
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: false
+#    hibernate:
+#      ddl-auto: update
+#      jdbc:
+#        time_zone: UTC
 
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    password:
-    database: 0
-    timeout: 100000
-    lettuce:
-      pool:
-        max-active: 300
-        max-idle: 100
-        max-wait: -1
-        min-idle: 100
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password:
+#    database: 0
+#    timeout: 100000
+#    lettuce:
+#      pool:
+#        max-active: 300
+#        max-idle: 100
+#        max-wait: -1
+#        min-idle: 100
 
 springdoc:
   paths-to-exclude: /swagger-resources/**, /v2/api-docs
